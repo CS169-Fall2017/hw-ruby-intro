@@ -47,5 +47,16 @@ end
 # Part 3
 
 class BookInStock
-# YOUR CODE HERE
+  def initialize(isbn, price)
+    raise ArgumentError.new("Not a valid isbn number!!!") if isbn.empty?
+    raise ArgumentError.new("Not a valid price!!!") if price <= 0
+    @isbn = isbn
+    @price = price
+  end
+
+  attr_accessor :isbn, :price
+
+  def price_as_string
+    "$" + format('%.2f',@price)
+  end
 end

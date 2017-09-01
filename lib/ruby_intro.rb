@@ -1,7 +1,7 @@
 # When done, submit this entire file to the autograder.
 
 # Part 1
-
+#similar to discussion problem
 def sum arr
   total = 0
   arr.each do |i|
@@ -11,11 +11,23 @@ def sum arr
 end
 
 def max_2_sum arr
-  # YOUR CODE HERE
+  if arr.empty?
+    maxVal = 0
+  elsif arr.length == 1
+    maxVal = arr[0]
+  else
+    arr.sort!
+    maxVal = arr[arr.length - 1] + arr[arr.length - 2]
+  end
 end
 
 def sum_to_n? arr, n
-  # YOUR CODE HERE
+  for i in 0..(arr.length-2)
+    if arr[i] + arr[i + 1] == n
+      return true
+    end
+  end
+  return false
 end
 
 # Part 2
